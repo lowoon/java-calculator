@@ -1,7 +1,5 @@
 import domain.Calculator;
-import domain.Converter;
 import domain.NumberSentence;
-import domain.Number;
 import errors.InvalidInputException;
 import view.InputView;
 import view.OutputView;
@@ -13,10 +11,10 @@ public class Application {
         NumberSentence numberSentence = createNumberSentence();
 
         Calculator calculator = new Calculator();
-        Number result = calculator.calculateNumberSentence(numberSentence);
+        int result = calculator.calculateNumberSentence(numberSentence);
 
         OutputView outputView = new OutputView();
-        outputView.showCalculateResult(result.toString());
+        outputView.showCalculateResult(result);
     }
 
     private static NumberSentence createNumberSentence() {
@@ -24,11 +22,7 @@ public class Application {
             InputView inputView = new InputView(new Scanner(System.in));
             String sentence = inputView.receiveInput();
 
-            Converter converter = new Converter();
-            return converter.getNumberSentence(sentence);
-        } catch (NumberFormatException e) {
-            System.out.println("There is something not number in number place");
-            return createNumberSentence();
+            return new NumberSentence(sentence);
         } catch (InvalidInputException e) {
             System.out.println(e.getMessage());
             return createNumberSentence();

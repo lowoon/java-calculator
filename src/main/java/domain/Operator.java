@@ -1,27 +1,19 @@
 package domain;
 
+import java.util.function.BiFunction;
+
 enum Operator {
-    PLUS("+"),
-    MINUS("-"),
-    MULTIPLIFICATION("*"),
-    DIVISION("/");
+    PLUS("+", Integer::sum),
+    MINUS("-", (first, second) -> first - second),
+    MULTIPLICATION("*", (first, second) -> first * second),
+    DIVISION("/", (first, second) -> first / second);
 
     String operator;
+    BiFunction<Integer, Integer, Integer> computation;
 
-    Operator(String operator) {
+    Operator(String operator, BiFunction<Integer, Integer, Integer> computation) {
         this.operator = operator;
-    }
-
-    public boolean isPlus() {
-        return this == PLUS;
-    }
-
-    public boolean isMinus() {
-        return this == MINUS;
-    }
-
-    public boolean isMultiplification() {
-        return this == MULTIPLIFICATION;
+        this.computation = computation;
     }
 
     @Override
