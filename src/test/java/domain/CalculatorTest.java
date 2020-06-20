@@ -8,6 +8,11 @@ class CalculatorTest {
 
     @Test
     void plus() {
-        assertThat(Calculator.valueOf("PLUS").calculate(1,2)).isEqualTo(3);
+        assertThat(Calculator.valueOf("PLUS").calculate(1, 2)).isEqualTo(3);
+    }
+
+    @Test
+    void minus() {
+        assertThat(Calculator.valueOf("MINUS").calculate(2, 1)).isEqualTo(1);
     }
 }
