@@ -6,13 +6,13 @@ public class InputView {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public static int receiveOption() {
+    public static String receiveOption() {
         System.out.println("기능을 선택해 주세요");
         System.out.println("1.더하기");
         System.out.println("2.빼기");
         System.out.println("3.곱하기");
         System.out.println("4.나누기");
-        return Integer.parseInt(scanner.nextLine());
+        return scanner.nextLine();
     }
 
     public static String receiveNumbers() {

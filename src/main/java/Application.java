@@ -9,7 +9,7 @@ import view.OutputView;
 
 public class Application {
     public static void main(String[] args) {
-        int option = InputView.receiveOption();
+        int option = Integer.parseInt(InputView.receiveOption());
         Calculator calculator = Calculator.from(option);
 
         String inputNumbers = InputView.receiveNumbers();
