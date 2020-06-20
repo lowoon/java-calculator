@@ -4,7 +4,8 @@ import java.util.function.BiFunction;
 
 public enum  Calculator {
     PLUS(Integer::sum),
-    MINUS((a, b) -> a - b);
+    MINUS((a, b) -> a - b),
+    MULTIPLICATION((a, b) -> a * b);
 
     private final BiFunction<Integer, Integer, Integer> calculator;
 

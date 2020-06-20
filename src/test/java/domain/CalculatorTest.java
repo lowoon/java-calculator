@@ -15,4 +15,9 @@ class CalculatorTest {
     void minus() {
         assertThat(Calculator.valueOf("MINUS").calculate(2, 1)).isEqualTo(1);
     }
+
+    @Test
+    void multiplication() {
+        assertThat(Calculator.valueOf("MULTIPLICATION").calculate(2, 1)).isEqualTo(2);
+    }
 }
