@@ -20,4 +20,9 @@ class CalculatorTest {
     void multiplication() {
         assertThat(Calculator.valueOf("MULTIPLICATION").calculate(2, 1)).isEqualTo(2);
     }
+
+    @Test
+    void division() {
+        assertThat(Calculator.valueOf("DIVISION").calculate(4, 2)).isEqualTo(2);
+    }
 }
